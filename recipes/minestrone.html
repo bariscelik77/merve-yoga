@@ -3,18 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Minestrone — MerBakery · TheyoginiM</title>
+<title>Minestrone · Minestrone — MerBakery · TheyoginiM</title>
 <meta name="description" content="Minestrone tarifi — MerBakery, Merve Şeneren.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Minestrone · Minestrone — MerBakery · TheyoginiM">
+<meta property="og:description" content="MerBakery recipe by Merve Şeneren, in Turkish and English.">
+<meta property="og:url" content="https://bariscelik77.github.io/theyoginim/recipes/minestrone.html">
+<meta property="og:image" content="https://bariscelik77.github.io/theyoginim/assets/images/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav><a href="../index.html#merbakery">← Tüm tarifler</a><a href="../index.html" class="logo">The<i>yogini</i>M</a></nav>
+<nav><a href="../index.html#merbakery">← <span data-tr>Tüm tarifler</span><span data-en>All recipes</span></a><span class="lang"><button data-l="tr">TR</button><button data-l="en">EN</button></span><a href="../index.html" class="logo">The<i>yogini</i>M</a></nav>
 <article>
   <div class="eyebrow">MerBakery · 2015</div>
-  <h1>Minestrone</h1>
-  
-  <div class="body">
+  <h1><span data-tr>Minestrone</span><span data-en>Minestrone</span></h1>
+  <p class="en"><span data-tr></span><span data-en>Minestrone</span></p><div class="body" data-tr>
 <p><strong><a href="https://merbakery.wordpress.com/wp-content/uploads/2015/03/img_9149.jpg"><img loading="lazy" class="alignnone wp-image-1244 size-medium" src="https://merbakery.wordpress.com/wp-content/uploads/2015/03/img_9149.jpg?w=900" alt="IMG_9149" /></a></strong></p>
 <p><strong>Malzemeler:</strong></p>
 <p><strong>1 adet kuru sogan / 1 onion</strong><br>
@@ -46,8 +53,27 @@ Season with salt, pepper and dried mint.<br>
 Last add olive oil. Remove bay leaves.<br>
 Your soup is ready, bon appetit!</p>
   </div>
-  <div class="pn"><a href="havuclu-kek-carrot-cake.html">← Önceki<br><b>Havuçlu Kek</b></a><a href="siyah-birali-cikolatali-kek-chocolate-cake-with-dark-beer.html">Sonraki →<br><b>Siyah Biralı Çikolatalı Kek</b></a></div>
+  <div class="body" data-en>
+<a href="https://merbakery.wordpress.com/wp-content/uploads/2015/03/img_9149.jpg"><img loading="lazy" class="alignnone wp-image-1244 size-medium" src="https://merbakery.wordpress.com/wp-content/uploads/2015/03/img_9149.jpg?w=900" alt="IMG_9149" /></a>
+<p><strong>Ingredients:</strong></p>
+<ul><li>1 onion</li><li>1 sweet potato</li><li>2 celery stalks (with leaves)</li><li>1 carrot</li><li>1 zucchini</li><li>1 cup red kidney (barbunya) beans</li><li>1 beetroot</li><li>2 tablespoons olive oil</li><li>1 cup tomato purée</li><li>4 cups water</li><li>2 bay leaves</li><li>Salt, black pepper, dried mint</li></ul>
+<p><strong>Preparation:</strong></p>
+<p>Soak the beans overnight. Boil them for 20 minutes in enough water to cover, then drain. Add 4 cups of water and the tomato purée to the beans. Add the bay leaves.</p>
+<p>Dice all the vegetables. (They should be small, so it takes a little patience :))</p>
+<p>Add the onion, beetroot and carrot to the pot. Cook for another 20 minutes.</p>
+<p>Add the quicker-cooking vegetables: the potato, zucchini, and celery stalks and leaves. Cook for another 40 minutes.</p>
+<p>It takes a while, but as it cooks the flavours blend and the soup gets tastier.</p>
+<p>Season with salt and pepper, and add the olive oil just before taking it off the heat. Remove the bay leaves.</p>
+<p>Your soup is ready. Enjoy!</p>
+  </div>
+  <div class="pn"><a href="havuclu-kek-carrot-cake.html">← <span data-tr>Önceki</span><span data-en>Previous</span><br><b><span data-tr>Havuçlu Kek</span><span data-en>Carrot Cake</span></b></a><a href="siyah-birali-cikolatali-kek-chocolate-cake-with-dark-beer.html"><span data-tr>Sonraki</span><span data-en>Next</span> →<br><b><span data-tr>Siyah Biralı Çikolatalı Kek</span><span data-en>Chocolate Cake with Dark Beer</span></b></a></div>
 </article>
 <footer>© TheyoginiM · Merve Şeneren · <a href="../index.html">Yoga</a> · <a href="../index.html#merbakery">MerBakery</a></footer>
+<script>
+(function(){var K='tym-lang';function set(l){document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;
+document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem(K,l)}catch(e){}}
+var l='tr';try{l=localStorage.getItem(K)||'tr'}catch(e){}if(location.hash==='#en')l='en';if(location.hash==='#tr')l='tr';set(l);
+document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.l)}});})();
+</script>
 </body>
 </html>

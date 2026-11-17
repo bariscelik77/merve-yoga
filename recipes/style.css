@@ -21,3 +21,10 @@ h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,6
 .pn a:last-child{text-align:right}
 .pn b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;letter-spacing:0;color:var(--ink);margin-top:2px}
 footer{text-align:center;padding:30px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-left:auto;margin-right:18px}
+.lang button{border:0;background:none;padding:4px 11px;font:500 12px 'Jost',sans-serif;letter-spacing:1px;cursor:pointer;color:var(--muted)}
+.lang button.on{background:var(--sage);color:#fff}
+[data-en]{display:none}
+body.en [data-tr]{display:none}
+body.en [data-en]{display:revert}
