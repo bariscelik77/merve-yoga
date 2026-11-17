@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merve Şeneren — Yoga</title>
+<meta name="description" content="Merve Şeneren — yoga instructor. Private, group and online yoga classes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#f6f1ea; --cream:#fbf8f3; --sage:#8a9a7b; --sage-d:#5f6f52; --clay:#c48a6a;
+    --ink:#2f2a25; --muted:#6f665d; --line:#e4dbcf;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--cream);line-height:1.7;font-size:17px}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:.5px;text-decoration:none}
+  .logo span{color:var(--sage-d);font-style:italic}
+  .links{display:flex;gap:26px;align-items:center}
+  .links a{text-decoration:none;font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+  .links a:hover{color:var(--sage-d)}
+  .lang{border:1px solid var(--line);border-radius:20px;display:flex;overflow:hidden}
+  .lang button{border:0;background:none;padding:4px 11px;font:500 12px var(--sans);letter-spacing:1px;cursor:pointer;color:var(--muted)}
+  .lang button.on{background:var(--sage);color:#fff}
+  @media(max-width:760px){.links a{display:none}}
+
+  /* hero */
+  .hero{padding:90px 0 70px;background:linear-gradient(180deg,var(--sand),var(--cream))}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--clay);font-weight:500}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05;margin:14px 0 20px}
+  h1 em{color:var(--sage-d)}
+  .lead{font-size:19px;color:var(--muted);max-width:480px}
+  .btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:.2s}
+  .btn.primary{background:var(--sage-d);color:#fff}
+  .btn.primary:hover{background:var(--ink)}
+  .btn.ghost{border:1px solid var(--sage-d);color:var(--sage-d)}
+  .btn.ghost:hover{background:var(--sage-d);color:#fff}
+  .portrait{aspect-ratio:4/5;border-radius:220px 220px 24px 24px;background:#e9e1d4;overflow:hidden;position:relative;display:flex;align-items:flex-end;justify-content:center}
+  .portrait img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  @media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.portrait{max-width:360px;margin:0 auto}}
+
+  section{padding:90px 0}
+  .h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.5vw,48px);line-height:1.15;margin:10px 0 18px}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+
+  /* about */
+  .about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+  .about p{margin-bottom:16px;color:var(--muted)}
+  .quote{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.35;color:var(--sage-d);border-left:2px solid var(--clay);padding-left:22px}
+  .creds{list-style:none;margin-top:24px;display:grid;gap:10px}
+  .creds li{padding-left:28px;position:relative}
+  .creds li:before{content:"";position:absolute;left:0;top:11px;width:14px;height:1px;background:var(--clay)}
+  .fill{background:#fff3cf;border-radius:3px;padding:0 4px}
+  @media(max-width:820px){.about .wrap{grid-template-columns:1fr;gap:30px}}
+
+  /* classes */
+  .classes{background:var(--sand)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:46px}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(95,111,82,.12)}
+  .card svg{width:46px;height:46px;margin-bottom:16px}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:26px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15.5px}
+  .tag{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--clay)}
+
+  /* ways */
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-top:46px;border-top:1px solid var(--line)}
+  .way{padding:30px 24px;border-bottom:1px solid var(--line)}
+  .way .n{font-family:var(--serif);font-size:42px;color:var(--sage);line-height:1}
+  .way h3{font-weight:500;font-size:18px;margin:12px 0 6px}
+  .way p{color:var(--muted);font-size:15.5px}
+
+  /* schedule */
+  .schedule{background:var(--sage-d);color:#f3efe8}
+  .schedule .eyebrow{color:#e9c8b4}
+  .schedule .lead{color:#dcd6cb}
+  table{width:100%;border-collapse:collapse;margin-top:40px;font-size:16px}
+  th,td{text-align:left;padding:16px 12px;border-bottom:1px solid rgba(255,255,255,.18)}
+  th{font-weight:500;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#e9c8b4}
+  .note{font-size:14px;color:#cfc8bc;margin-top:18px}
+
+  /* bakery */
+  .bakery .box{background:var(--sand);border-radius:24px;padding:50px;display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center}
+  .bakery svg{width:90px;height:90px}
+  .bakery h3{font-family:var(--serif);font-weight:400;font-size:32px;margin-bottom:6px}
+  .bakery p{color:var(--muted)}
+  @media(max-width:760px){.bakery .box{grid-template-columns:1fr;text-align:center;padding:36px 26px}.bakery svg{margin:0 auto}}
+
+  /* contact */
+  .contact .wrap{max-width:760px}
+  .channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px}
+  .ch{display:block;border:1px solid var(--line);border-radius:16px;padding:22px;text-decoration:none;background:#fff;transition:.2s}
+  .ch:hover{border-color:var(--sage)}
+  .ch small{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-bottom:4px}
+  .ch span{font-size:16px;word-break:break-word}
+
+  footer{padding:36px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* MerBakery */
+  .bakery{background:#fbf3ec}
+  .bk-head{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+  .bk-head svg{width:96px;height:96px}
+  @media(max-width:700px){.bk-head{grid-template-columns:1fr}.bk-head svg{width:70px;height:70px}}
+  .bk-tools{margin-top:36px;display:grid;gap:16px}
+  #bkSearch{width:100%;max-width:420px;padding:12px 18px;border:1px solid var(--line);border-radius:30px;font:300 16px var(--sans);background:#fff;outline:none}
+  #bkSearch:focus{border-color:var(--clay)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid #e6cdbd;background:#fff;color:var(--muted);border-radius:20px;padding:6px 14px;font:400 13.5px var(--sans);cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--clay)}
+  .chip.on{background:var(--clay);border-color:var(--clay);color:#fff}
+  .chip b{font-weight:400;opacity:.65;margin-left:4px}
+  .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:28px}
+  .rc{text-decoration:none;background:#fff;border:1px solid #efe1d6;border-radius:16px;padding:20px 20px 18px;text-align:left;cursor:pointer;font:inherit;color:inherit;display:flex;flex-direction:column;gap:8px;transition:.2s;min-height:130px}
+  .rc:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(196,138,106,.16);border-color:#e6cdbd}
+  .rc .ic{font-size:24px;line-height:1}
+  .rc h4{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.2}
+  .rc small{margin-top:auto;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--clay)}
+  .bk-count{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+  .rcp{position:fixed;inset:0;z-index:50;background:rgba(47,42,37,.55);display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow:auto}
+  .rcp[hidden]{display:none}
+  .rcp-box{background:var(--cream);border-radius:20px;max-width:720px;width:100%;padding:40px 36px;position:relative}
+  .rcp-box h3{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.15;margin:8px 0 18px}
+  .rcp-x{position:absolute;top:14px;right:18px;border:0;background:none;font-size:32px;cursor:pointer;color:var(--muted)}
+  .rcp-body{color:var(--ink)}
+  .rcp-body img{max-width:100%;height:auto;border-radius:12px;margin:10px 0}
+  .rcp-body p,.rcp-body ul,.rcp-body ol{margin-bottom:12px}
+  .rcp-body ul,.rcp-body ol{padding-left:22px}
+  .rcp-body .sharedaddy,.rcp-body .jp-relatedposts,.rcp-body .wpcnt,.rcp-body script{display:none}
+  .rcp-link{display:inline-block;margin-top:18px;color:var(--clay);font-weight:500;text-decoration:none}
+  .loading{color:var(--muted);font-style:italic}
+
+  [data-en]{display:none}
+  body.en [data-tr]{display:none}
+  body.en [data-en]{display:revert}
+</style>
+</head>
+<body>
+
+<!--
+  ================================================================
+  EDIT GUIDE (search for "class=\"fill\"" — yellow-highlighted text)
+  1. Instagram, WhatsApp              (Contact section)
+  2. Recipes: RECIPES list in the script at the bottom
+  3. Weekly schedule (days/times are examples)                  (Schedule section)
+  4. Photo: put merve.jpg next to index.html, then replace the SVG
+     inside <div class="portrait"> with:  <img src="merve.jpg" alt="Merve Şeneren">
+  Remove the .fill highlight once the real text is in.
+  ================================================================
+-->
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Merve <span>Şeneren</span></a>
+    <div class="links">
+      <a href="#about"><span data-tr>Hakkımda</span><span data-en>About</span></a>
+      <a href="#classes"><span data-tr>Dersler</span><span data-en>Classes</span></a>
+      <a href="#schedule"><span data-tr>Program</span><span data-en>Schedule</span></a>
+      <a href="#merbakery">MerBakery</a>
+      <a href="#contact"><span data-tr>İletişim</span><span data-en>Contact</span></a>
+      <div class="lang"><button id="bTR" class="on" onclick="setLang('tr')">TR</button><button id="bEN" onclick="setLang('en')">EN</button></div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span data-tr>E-RYT 500 Yoga Eğitmeni · Bahreyn</span><span data-en>E-RYT 500 Yoga Instructor · Bahrain</span></div>
+      <h1><span data-tr>Nefes al.<br><em>Yavaşla.</em><br>Dengede kal.</span><span data-en>Breathe.<br><em>Slow down.</em><br>Find balance.</span></h1>
+      <p class="lead">
+        <span data-tr>2014’ten beri kişiye özel yoga, yoga terapisi ve Ayurveda temelli programlar: birebir, küçük gruplar ve online.</span>
+        <span data-en>Personalised yoga, yoga therapy and Ayurveda-informed programmes since 2014: private, small-group and online.</span>
+      </p>
+      <div class="btns">
+        <a href="#contact" class="btn primary"><span data-tr>Ders Ayırt</span><span data-en>Book a class</span></a>
+        <a href="#classes" class="btn ghost"><span data-tr>Dersleri Gör</span><span data-en>See classes</span></a>
+      </div>
+    </div>
+    <div class="portrait" aria-label="Portrait">
+      <!-- Replace this SVG with <img src="merve.jpg" alt="Merve Şeneren"> -->
+      <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMax meet">
+        <circle cx="200" cy="170" r="110" fill="#f0d9c8"/>
+        <g fill="none" stroke="#5f6f52" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="200" cy="215" r="22" fill="#5f6f52"/>
+          <path d="M200 240 L200 330"/>
+          <path d="M200 262 C170 250 150 225 140 200"/>
+          <path d="M200 262 C230 250 250 225 260 200"/>
+          <path d="M140 200 C165 185 235 185 260 200" stroke-width="3" opacity=".35"/>
+          <path d="M200 330 C160 345 120 360 105 375 C150 382 200 372 225 352"/>
+          <path d="M200 330 C240 345 280 360 295 375 C250 382 200 372 175 352"/>
+        </g>
+        <path d="M0 420 C100 395 300 395 400 420 L400 500 L0 500Z" fill="#d9ccb8"/>
+        <path d="M60 300 c10 -30 30 -40 40 -40 c-5 20 -20 35 -40 40z M330 290 c-10 -28 -28 -38 -38 -38 c5 18 18 32 38 38z" fill="#8a9a7b" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span data-tr>Hakkımda</span><span data-en>About me</span></div>
+      <h2 class="h2"><span data-tr>Merhaba, ben Merve.</span><span data-en>Hi, I'm Merve.</span></h2>
+      <p class="quote"><span data-tr>“Yoga mükemmel duruşla değil, nazik bir farkındalıkla başlar.”</span><span data-en>“Yoga begins not with a perfect pose, but with gentle attention.”</span></p>
+    </div>
+    <div>
+      <p>
+        <span data-tr>Yoga Alliance onaylı E-RYT 500 eğitmeniyim ve 2014’ten bu yana serbest olarak ders veriyorum. Bilkent Üniversitesi Ekonomi bölümünden mezun olduktan sonra yıllarca araştırma uzmanı olarak çalıştım; masa başı hayatın bedende ve zihinde bıraktığı izleri bu yüzden çok iyi tanıyorum.</span>
+        <span data-en>I'm a Yoga Alliance E-RYT 500 teacher and have taught freelance since 2014. Before yoga I studied Economics at Bilkent University and worked for years as a research expert, so I know first-hand what desk life does to the body and mind.</span>
+      </p>
+      <p>
+        <span data-tr>Her programı kişiye göre hazırlıyorum. Yoga terapisi, Ayurveda, Geleneksel Çin Tıbbı, çakralar ve beş element yaklaşımını harmanlayarak hem bedene hem de yaşam tarzına bakıyorum.</span>
+        <span data-en>Every programme is built around the person. I draw on yoga therapy, Ayurveda, Traditional Chinese Medicine, chakra work and the five elements to look at both the body and the way you live.</span>
+      </p>
+      <p>
+        <span data-tr>Mutfakta da aynı felsefeyi uygularım: sabır, iyi malzeme ve biraz sevgi. Yüzden fazla tarifimi aşağıda, <a href="#merbakery">MerBakery</a> bölümünde bulabilirsiniz.</span>
+        <span data-en>I bring the same philosophy to the kitchen: patience, good ingredients and a little love. You'll find more than a hundred of my recipes below, in <a href="#merbakery">MerBakery</a>.</span>
+      </p>
+      <ul class="creds">
+        <li>E-RYT 500 — Yoga Alliance</li>
+        <li><span data-tr>500 saat Yoga Eğitmenliği &amp; Yoga Terapisi — Trimurti Yoga (2014)</span><span data-en>500-hour Yoga Teacher Training &amp; Yoga Therapy — Trimurti Yoga (2014)</span></li>
+        <li><span data-tr>Ayurveda · Geleneksel Çin Tıbbı · Çakra ve 5 Element programları</span><span data-en>Ayurveda · Traditional Chinese Medicine · Chakra &amp; Five-Element programmes</span></li>
+        <li><span data-tr>2014’ten beri serbest yoga eğitmeni</span><span data-en>Freelance yoga instructor since 2014</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="classes" id="classes">
+  <div class="wrap center">
+    <div class="eyebrow"><span data-tr>Dersler</span><span data-en>Classes</span></div>
+    <h2 class="h2"><span data-tr>Sana uygun pratiği bul</span><span data-en>Find the practice that suits you</span></h2>
+    <p class="lead"><span data-tr>Yeni başlayanlar her derse katılabilir; her pozun daha kolay bir versiyonu vardır.</span><span data-en>Beginners are welcome in every class; every pose has an easier option.</span></p>
+    <div class="grid" style="text-align:left">
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#5f6f52" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="10" r="4"/><path d="M24 14v14M24 18l-10 6M24 18l10 6M24 28l-7 12M24 28l7 12"/></svg>
+        <h3>Hatha</h3>
+        <p><span data-tr>Pozlarda kalarak güç, esneklik ve hizalanma üzerine çalışılan sakin tempolu ders.</span><span data-en>A steady class holding poses to build strength, flexibility and good alignment.</span></p>
+        <div class="tag"><span data-tr>Tüm seviyeler</span><span data-en>All levels</span></div>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#5f6f52" stroke-width="2" stroke-linecap="round"><path d="M4 30c6-8 12-8 18 0s12 8 18 0"/><path d="M4 20c6-8 12-8 18 0s12 8 18 0" opacity=".5"/></svg>
+        <h3><span data-tr>Yoga Terapisi</span><span data-en>Yoga Therapy</span></h3>
+        <p><span data-tr>Bel, boyun, duruş ya da stres gibi kişisel ihtiyaçlara göre hazırlanan, terapötik birebir pratik.</span><span data-en>One-to-one therapeutic practice shaped around your needs: back, neck, posture or stress.</span></p>
+        <div class="tag"><span data-tr>Birebir</span><span data-en>Private</span></div>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#5f6f52" stroke-width="2" stroke-linecap="round"><path d="M30 8a14 14 0 1 0 10 22A12 12 0 0 1 30 8z"/></svg>
+        <h3>Yin &amp; Restorative</h3>
+        <p><span data-tr>Destekli, uzun tutulan pozlarla derin gevşeme. Stres ve uyku için ideal.</span><span data-en>Long, supported holds for deep release. Ideal for stress and better sleep.</span></p>
+        <div class="tag"><span data-tr>Tüm seviyeler</span><span data-en>All levels</span></div>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#5f6f52" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="24" r="16"/><path d="M24 14v20M14 24h20" opacity=".4"/><circle cx="24" cy="24" r="4"/></svg>
+        <h3><span data-tr>Çakra &amp; 5 Element</span><span data-en>Chakra &amp; Five Elements</span></h3>
+        <p><span data-tr>Ayurveda ve Çin tıbbından ilham alan, enerjiyi dengelemeye odaklı tematik dersler ve programlar.</span><span data-en>Themed classes and programmes inspired by Ayurveda and Chinese medicine, focused on balancing energy.</span></p>
+        <div class="tag"><span data-tr>Tüm seviyeler</span><span data-en>All levels</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow"><span data-tr>Nasıl çalışıyoruz</span><span data-en>Ways to practise</span></div>
+    <h2 class="h2"><span data-tr>Birebir, grup ya da online</span><span data-en>Private, group or online</span></h2>
+    <div class="ways">
+      <div class="way"><div class="n">01</div><h3><span data-tr>Birebir Dersler</span><span data-en>Private sessions</span></h3><p><span data-tr>Hedeflerine, bedenine ve programına göre hazırlanan kişisel pratik.</span><span data-en>A personal practice built around your goals, body and schedule.</span></p></div>
+      <div class="way"><div class="n">02</div><h3><span data-tr>Küçük Gruplar</span><span data-en>Small groups</span></h3><p><span data-tr>En fazla 8 kişilik, birebir ilgi gösterilen samimi dersler.</span><span data-en>Classes of up to 8 people, so everyone gets attention.</span></p></div>
+      <div class="way"><div class="n">03</div><h3><span data-tr>Online Dersler</span><span data-en>Online classes</span></h3><p><span data-tr>Evden canlı katılım; nerede olursan ol pratiğine devam et.</span><span data-en>Join live from home and keep practising wherever you are.</span></p></div>
+      <div class="way"><div class="n">04</div><h3><span data-tr>Kurumsal Yoga</span><span data-en>Corporate yoga</span></h3><p><span data-tr>Ofis ekipleri için masa başı rahatlama ve stres yönetimi seansları.</span><span data-en>Desk-friendly stretching and stress-relief sessions for teams.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule" id="schedule">
+  <div class="wrap">
+    <div class="eyebrow"><span data-tr>Haftalık Program</span><span data-en>Weekly schedule</span></div>
+    <h2 class="h2"><span data-tr>Bu haftanın dersleri</span><span data-en>This week's classes</span></h2>
+    <p class="lead"><span data-tr>Yer sınırlıdır; lütfen önceden rezervasyon yapın.</span><span data-en>Places are limited; please book ahead.</span></p>
+    <table>
+      <thead><tr><th><span data-tr>Gün</span><span data-en>Day</span></th><th><span data-tr>Saat</span><span data-en>Time</span></th><th><span data-tr>Ders</span><span data-en>Class</span></th><th><span data-tr>Yer</span><span data-en>Where</span></th></tr></thead>
+      <tbody>
+        <tr><td><span data-tr>Pazartesi</span><span data-en>Monday</span></td><td>19:00</td><td>Hatha Flow</td><td>Online</td></tr>
+        <tr><td><span data-tr>Çarşamba</span><span data-en>Wednesday</span></td><td>09:30</td><td>Hatha</td><td><span class="fill">[Stüdyo, Bahreyn / Studio, Bahrain]</span></td></tr>
+        <tr><td><span data-tr>Cuma</span><span data-en>Friday</span></td><td>20:00</td><td>Yin &amp; Restorative</td><td>Online</td></tr>
+        <tr><td><span data-tr>Cumartesi</span><span data-en>Saturday</span></td><td>10:00</td><td><span data-tr>Çakra &amp; 5 Element</span><span data-en>Chakra &amp; Five Elements</span></td><td><span class="fill">[Stüdyo, Bahreyn / Studio, Bahrain]</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note"><span data-tr>Birebir dersler için uygun saatleri iletişim kanallarından sorabilirsiniz.</span><span data-en>For private sessions, get in touch to arrange a time.</span></p>
+  </div>
+</section>
+
+<section class="bakery" id="merbakery">
+  <div class="wrap">
+    <div class="bk-head">
+      <svg viewBox="0 0 90 90" fill="none" stroke="#c48a6a" stroke-width="2.5" stroke-linecap="round"><path d="M15 55c0-18 13-30 30-30s30 12 30 30z"/><path d="M12 55h66v8a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6z"/><path d="M33 40l4 8M45 36v10M57 40l-4 8"/></svg>
+      <div>
+        <div class="eyebrow">MerBakery</div>
+        <h2 class="h2"><span data-tr>Matın dışında: mutfaktan tarifler</span><span data-en>Off the mat: recipes from my kitchen</span></h2>
+        <p class="lead"><span data-tr>2011’den beri biriktirdiğim kurabiyeler, kekler, poğaçalar ve ev yemekleri. Bir tarife tıklayıp açın.</span><span data-en>Cookies, cakes, pastries and home cooking, collected since 2011. Tap a recipe to open it. (Recipes are in Turkish, some with English.)</span></p>
+      </div>
+    </div>
+
+    <div class="bk-tools">
+      <input id="bkSearch" type="search" placeholder="Tarif ara / Search recipes…" aria-label="Search recipes">
+      <div id="bkChips" class="chips"></div>
+    </div>
+    <div id="bkGrid" class="bk-grid"></div>
+    <div class="center"><button id="bkMore" class="btn ghost" style="margin-top:34px;background:none;cursor:pointer"><span data-tr>Daha fazla göster</span><span data-en>Show more</span></button></div>
+    <p class="bk-count" id="bkCount"></p>
+  </div>
+</section>
+
+
+
+<section class="contact" id="contact">
+  <div class="wrap center">
+    <div class="eyebrow"><span data-tr>İletişim</span><span data-en>Contact</span></div>
+    <h2 class="h2"><span data-tr>Birlikte pratik yapalım</span><span data-en>Let's practise together</span></h2>
+    <p class="lead"><span data-tr>Ders ayırtmak ya da soru sormak için bana yazın; genellikle aynı gün dönüş yapıyorum.</span><span data-en>Write to book a class or ask a question. I usually reply the same day.</span></p>
+    <div class="channels" style="text-align:left">
+      <a class="ch" href="mailto:merveseneren@gmail.com"><small>E-mail</small><span>merveseneren@gmail.com</span></a>
+      <a class="ch" href="https://instagram.com/" target="_blank" rel="noopener"><small>Instagram</small><span class="fill">@kullaniciadi</span></a>
+      <a class="ch" href="https://wa.me/900000000000" target="_blank" rel="noopener"><small>WhatsApp</small><span class="fill">+90 5xx xxx xx xx</span></a>
+      <a class="ch" href="https://www.linkedin.com/in/merve-seneren-6994ab24/" target="_blank" rel="noopener"><small>LinkedIn</small><span>Merve Şeneren</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Merve Şeneren</span>
+    <span>Namaste 🙏</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  function setLang(l){
+    document.body.classList.toggle('en', l==='en');
+    document.documentElement.lang = l;
+    document.getElementById('bTR').classList.toggle('on', l==='tr');
+    document.getElementById('bEN').classList.toggle('on', l==='en');
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  try{ var s = localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+  /* ===== MerBakery recipes =====
+     Each row: [WordPress post ID, title, post path on merbakery.wordpress.com, original categories, by Barış?]
+     To add a recipe: add a row at the top. */
+  var RECIPES = [
+[1623,"Bademli Limonlu Kurabiye","2018/07/09/bademli-limonlu-kurabiye/",""],
+[1578,"Karnabahar Kısırı","2017/05/17/karnabahar-kisiri/",""],
+[1534,"Muz Kremalı Rulo Kek/Banana Custard Roll Cake","2017/01/27/muz-kremali-rulo-kekbanana-custard-roll-cake/",""],
+[1509,"Glutensiz Ekmek","2017/01/08/glutensiz-ekmek/","",1],
+[1499,"Çerkez Tavuğu/Circassian Chicken","2016/11/01/cerkez-tavugucircassian-chicken/","Mezeler|Yemek"],
+[1479,"Fırın Mücver","2016/08/14/firin-mucver/",""],
+[1449,"Elmalı Gül Kurabiye/Apple Cinnamon Rolls","2016/07/27/elmali-gul-kurabiye-apple-cinnamon-rolls/",""],
+[1426,"Şeftalili Kek","2016/07/24/seftalili-kek-2/","",1],
+[1354,"Mini Cheesecake","2016/03/03/mini-cheesecake/",""],
+[1286,"Masala Baharatlı Bezelye/Green Peas Masala","2016/01/26/masala-baharatli-bezelye-green-peas-masala/",""],
+[1281,"Peynirli Sebze Köftesi/Cheese Stick Veggie Meatball","2015/10/05/peynirli-sebze-koftesicheese-stick-veggie-meatball/","Yemek"],
+[1278,"Ev Yapımı Granola/Homemade Granola","2015/09/21/ev-yapimi-granolahomemade-granola/",""],
+[1277,"Galeta Unlu Poğaça","2015/08/27/galeta-unlu-pogaca/","Çörekler"],
+[1271,"Taze Kekik ve Limonlu Biscotti/Fresh Thyme and Lemon Biscotti","2015/07/01/taze-kekik-ve-limonlu-biscottifresh-thyme-and-lemon-biscotti/","Kurabiyeler"],
+[1267,"Fırında Piliç/Oven Baked Poussin","2015/05/22/firinda-pilic-oven-baked-poussin/","Yemek"],
+[1262,"Nutella ve Cornflakes Kurabiyesi/Nutella Cornflakes Cookies","2015/04/23/nutella-ve-cornflakes-kurabiyesinutella-cornflakes-cookies/","Kurabiyeler"],
+[1259,"Enginarlı Ispanaklı Cheesecake/Artichoke Spinach Cheesecake","2015/04/23/enginarli-ispanakli-cheesecake/","Kekler"],
+[1250,"İrlanda Ekmeği/Irish Bread","2015/03/18/irlanda-ekmegi-irish-bread/","Ekmekler"],
+[1249,"Siyah Biralı Çikolatalı Kek/Chocolate Cake with Dark Beer","2015/03/14/siyah-birali-cikolatali-kek-chocolate-cake-with-dark-beer/",""],
+[1243,"Minestrone","2015/03/05/minestrone/","Yemek"],
+[1242,"Havuçlu Kek/Carrot Cake","2015/02/26/havuclu-kek-carrot-cake/",""],
+[1240,"Limonlu Vişneli Kek","2015/02/02/limonlu-visneli-kek/","",1],
+[1237,"Cevizli Brownie","2015/01/27/cevizli-brownie/","Kekler",1],
+[1235,"Fırında Sebzeli Parmak Tavuk","2015/01/24/firinda-sebzeli-parmak-tavuk/","",1],
+[1232,"Terbiyeli Tavuk Çorbası","2015/01/14/terbiyeli-tavuk-corbasi/","",1],
+[1227,"Çörekotlu Minik Kurabiye","2015/01/11/corekotlu-minik-kurabiye/","",1],
+[1216,"Yeni Yıla Girerken","2015/01/09/yeni-yila-girerken/","",1],
+[1198,"Karabuğday Pilavı (Greçka)","2014/06/02/karabugday-pilavi-grecka/","Yemek"],
+[1195,"Çikolataya Batırılmış Kurabiyeler","2014/04/30/cikolataya-batirilmis-kurabiyeler/","Kurabiyeler"],
+[1185,"Aperitifler","2014/04/30/aperitifler/","Yemek"],
+[1179,"Portakallı Çikolatalı Kek","2014/04/30/portakalli-cikolatali-kek/","Kekler"],
+[1173,"Şişede Tavuk","2014/04/30/sisede-tavuk/","Yemek"],
+[1168,"Fırın Sütlaç","2014/02/27/firin-sutlac/","Tatlılar"],
+[1160,"Kestaneli Kahveli Kek","2014/02/27/kestaneli-kahveli-kek/","Kekler"],
+[1153,"Zeytin Ezmeli Tulum Peynirli Poğaça","2014/01/15/zeytin-ezmeli-tulum-peynirli-pogaca/","Çörekler"],
+[1141,"Somon Köfte","2014/01/15/somon-kofte-7-8-adet/","Yemek"],
+[1137,"Avokadolu Karides Salata","2013/12/11/avokadolu-karides-salata/","Yemek"],
+[1132,"Fındıklı Kurabiye","2013/12/11/findikli-kurabiye/",""],
+[1122,"Kimchi","2013/11/28/kimchi/","Yemek"],
+[1114,"Peynirli Kurabiye","2013/11/21/peynirli-kurabiye/","Çörekler"],
+[1109,"Çilekli Pudingli Kek","2013/11/21/cilekli-pudingli-kek/","Kekler"],
+[1103,"Garam Masala Bezelye","2013/11/12/garam-masala-bezelye/","Yemek"],
+[1086,"Karnıbahar Pizza","2013/10/22/karnibahar-pizza/","Yemek"],
+[1082,"Şeftalili Kek","2013/10/22/seftalili-kek/","Kekler"],
+[1078,"Fırında Kuzu But","2013/10/09/firinda-kuzu-but/",""],
+[1074,"Brokoli Çorbası","2013/10/09/brokoli-corbasi/",""],
+[1064,"2 Yeni Kek Tarifi","2013/09/05/2-yeni-kek-tarifi/","Kekler"],
+[1058,"Sorriso Nutella Fındık Ezmeli","2013/08/29/sorriso-nutella-findik-ezmeli/","Dondurmalar"],
+[1051,"Naneli Dondurma","2013/08/26/naneli-dondurma/","Dondurmalar"],
+[1048,"Avokadolu Tavuklu Salata","2013/08/26/avakadolu-tavuklu-salata/",""],
+[1043,"Tavuk Sebze Kinoalı Çorba/Chicken Soup with Quinoa and Vegetables","2013/07/01/tavuk-sebze-quinoali-corba-chicken-soup-with-quinoa-and-vegetables/","Yemek"],
+[1039,"Yulaflı Üzümlü Kurabiye/Oatmeal Raisin Cookies","2013/06/28/yulafli-uzumlu-kurabiyeoatmeal-raisin-cookies/","Kurabiyeler"],
+[1032,"Muzlu Çikolatalı Tart/Banana Chocolate Tart","2013/06/28/muzlu-cikolatali-tartbanana-chocolate-tart/","Tartlar"],
+[1018,"Bonibonlu Pasta","2013/06/23/bonibonlu-pasta/","Pastalar"],
+[1020,"Kabaklı Sağlıklı Pizza","2013/06/23/kabakli-saglikli-pizza/","Yemek"],
+[1014,"Hardal Soslu Kinoa Salatası/Quinoa Salad with Mustard Dressing","2013/06/10/hardal-soslu-kinoa-salatasi-quinoa-salad-with-mustard-dressing/","Yemek"],
+[1010,"Çilekli Tart/Strawberry Tart","2013/05/15/cilekli-tartstrawberry-tart/","Tartlar"],
+[1001,"Sosisli Patatesli Muffin/Sausage Potato Muffins","2013/05/01/sosisli-patatesli-muffin-sausage-potato-muffins/","Çörekler"],
+[998,"Ananaslı Muzlu Sorbe/Pineapple Banana Sorbet","2013/04/27/ananasli-muzlu-sorbet-pineapple-banana-sorbet/","Dondurmalar"],
+[994,"Çikolatalı Kumkuatlı Tart","2013/04/04/cikolatali-kumkuatli-tart/","Tartlar"],
+[989,"Keçi Peynirli Nohut Salatası/Goat Cheese & Chickpea Salad","2013/03/17/keci-peynirli-nohut-salatasi-goat-cheese-chickpea-salad/","Yemek"],
+[979,"Narlı Yerfıstıklı Kurabiye/Pomegranate Peanut Cookies","2013/03/14/narli-yerfistikli-kurabiye-pomegranate-peanut-cookies/","Kurabiyeler"],
+[971,"Portakal Orada Kal :)","2013/02/23/portakal-orada-kal/","Kekler"],
+[941,"Tereyağlı Fındıklı Kurabiyeler","2013/02/20/tereyagli-findikli-kurabiyeler/","Kurabiyeler"],
+[934,"Ev Yapımı Bloody Mary","2012/12/11/ev-yapimi-bloody-mary/","İçecekler"],
+[921,"Ayva Tatlısı","2012/12/03/ayva-tatlisi/","Tatlılar"],
+[917,"Avokado Tapas","2012/11/26/avakado-tapas/","Yemek"],
+[899,"Enginarlı & Karışık Malzemeli İki Farklı Pizza","2012/10/17/enginarli-karisik-malzemeli-iki-farkli-pizza-tarifi/","Yemek"],
+[890,"Pişmeyen Muzlu Cheesecake","2012/09/27/pismeyen-muzlu-cheesecake/","Pastalar"],
+[886,"Satsumalı Hindistan Cevizli Dondurma","2012/09/24/satsumali-hindistan-cevizli-dondurma/","Dondurmalar"],
+[879,"Ispanaklı Lorlu Poğaça","2012/09/10/ispanakli-lorlu-pogaca/","Çörekler"],
+[868,"Kakaolu Cevizli Kek","2012/08/27/kakaolu-cevizli-kek/","Kekler"],
+[862,"Etli Girit Kabağı Dolması","2012/08/17/etli-girit-kabagi-dolmasi/","Yemek"],
+[853,"Kadayıflı Muhallebi","2012/08/13/kadayifli-muhallebi/","Tatlılar"],
+[848,"Çikolata Parçalı Kuki/Chocolate Chip Cookies","2012/08/07/chocolate-chip-cookies-cikolata-parcali-kuki/","Kurabiyeler"],
+[823,"Keçi Peynirli Lavaş","2012/07/30/keci-peynirli-lavas/","Yemek"],
+[827,"Maş Fasulyesi Salatası","2012/07/30/mas-fasulyesi-salatasi/","Yemek"],
+[831,"Kaparili Yoğurt Soslu Fırında Çıtır Patates","2012/07/30/kaparili-yogurt-soslu-firinda-citir-patates/","Yemek"],
+[816,"“Let’s Celebrate Life” Parti Lezzetleri","2012/07/30/lets-celebrate-life-party-lezzetleri/","İçecekler"],
+[788,"Vişne Kompostosu","2012/07/17/visne-kompostosu/","İçecekler"],
+[768,"Tropikal Kek","2012/07/04/tropikal-kek/","Kekler"],
+[758,"Dondurmalı Profiterol","2012/06/26/dondurmali-profiterol/","Tatlılar"],
+[702,"Elmalı Kurabiye","2012/06/11/elmali-kurabiye/","Kurabiyeler"],
+[658,"Dereotlu Peynirli Kek","2012/06/04/dereotlu-peynirli-kek/","Kekler"],
+[651,"Salçalı Tuzlu Kuru Pasta","2012/05/18/salcali-tuzlu-kuru-pasta/","Çörekler"],
+[647,"Çikolatalı Armutlu Tart","2012/05/14/cikolatali-armutlu-tart/","Tartlar"],
+[626,"Çilekli Muhallebi","2012/05/03/cilekli-muhallebi/","Tatlılar"],
+[618,"Mantarlı Bruschetta","2012/04/12/mantarli-bruschetta/","Ekmekler"],
+[609,"Kuru Kayısılı Biberiyeli Tart","2012/04/09/kuru-kayisili-biberiyeli-tart/","Tartlar"],
+[604,"Elmalı Krep","2012/04/05/elmali-krep/","Tatlılar"],
+[587,"Yaban Mersinli Kek","2012/04/02/yaban-mersinli-kek/","Kekler"],
+[568,"Pancake","2012/03/26/pancake/","Kekler"],
+[554,"Kepekli Otlu Poğaça","2012/03/23/kepekli-otlu-pogaca/","Çörekler"],
+[541,"Damla Sakızlı Lorlu Kurabiye","2012/03/16/damla-sakizli-lorlu-kurabiye/","Kurabiyeler"],
+[522,"Havuçlu Tarçınlı Light Muffin","2012/03/02/havuclu-tarcinli-light-muffin/","Kekler"],
+[517,"Çikolatalı Cupcake","2012/02/29/cikolatali-cupcake/","Kekler"],
+[504,"Baharatlı Yoga Çayı","2012/02/24/baharatli-yoga-cayi/","İçecekler"],
+[496,"Grissini","2012/02/20/grissini-tarifi/","Çörekler"],
+[490,"Ev Yapımı Portakal Likörü","2012/02/20/ev-yapimi-portakal-likoru/","İçecekler"],
+[485,"Sade Kurabiye","2012/02/14/sade-kurabiye-tarifi/","Kurabiyeler"],
+[472,"Kireçte Tahinli Kabak Tatlısı","2012/02/09/kirecte-tahinli-kabak-tatlisi/","Tatlılar"],
+[453,"Sütlü İrmik Tatlısı (Bisküvili ve Muzlu)","2012/01/25/sutlu-irmik-tatlisi-biskuvili-ve-muzlu/","Tatlılar"],
+[441,"Fındıklı Çikolatalı Biscotti (Nam-ı Diğer Peksimet)","2012/01/19/findikli-cikolatali-biscotti-nam-i-deger-peksimet/","Bisküvi"],
+[435,"Beyaz ve Çikolatalı Pandispanya","2012/01/17/beyaz-ve-cikolatali-pandispanya/","Kekler"],
+[428,"Bitter Çikolatalı Kek","2012/01/02/bitter-cikolatali-kek/","Kekler"],
+[422,"Tahinli Kıymalı Börek","2011/12/30/tahinli-kiymali-borek/","Börekler"],
+[336,"Gingerbread Cookie","2011/12/28/gingerbread-cookie/","Kurabiyeler"],
+[327,"Elmalı Pekmezli Kek","2011/12/16/elmali-pekmezli-kek/","Kekler"],
+[315,"Limonlu Cheesecake","2011/12/13/limonlu-cheesecake/","Kekler"],
+[308,"Elmalı Kek","2011/12/13/elmali-kek/","Kekler"],
+[248,"Damla Sakızlı Kurabiye","2011/11/28/damla-sakizli-kurabiye/","Kurabiyeler"],
+[231,"Patatesli Börek","2011/11/21/patatesli-borek/","Börekler"],
+[210,"Elmalı Pay","2011/11/18/elmali-pay/","Tartlar"],
+[179,"Alkolsüz Mojito","2011/11/18/179/","İçecekler"],
+[104,"Peynirli Poğaça","2011/10/23/peynirli-pogaca/","Çörekler"],
+[14,"Limonlu Kek","2011/10/18/limonlu-kek/","Kekler"],
+[12,"Kuru Meyve Kurabiyesi","2011/10/18/kuru-meyve-kurabiyesi/","Kurabiyeler"],
+[7,"Üzümlü Limonlu Yulaflı Kurabiye","2011/10/18/uzumlu-limonlu-yulafli-kurabiye/","Kurabiyeler"],
+[5,"Çikolatalı Çatlak Kurabiye","2011/10/18/cikolatali-catlak-kurabiye/","Kurabiyeler"]
+  ];
+  var GROUPS = [
+    {k:'drink',  i:'🍹', tr:'İçecekler',            en:'Drinks',              t:/içecek|mojito|likör|kompost|bloody|çay|lezzetleri/},
+    {k:'tart',   i:'🥧', tr:'Tartlar',              en:'Tarts & pies',         t:/tart|\bpay\b/},
+    {k:'cookie', i:'🍪', tr:'Kurabiye & Bisküvi',   en:'Cookies & biscuits',   t:/kurabiye|biscotti|cookie|kuki/},
+    {k:'bread',  i:'🥐', tr:'Poğaça, Ekmek & Börek', en:'Breads & pastries',   t:/poğaça|börek|ekmek|ekmeğ|grissini|bruschetta|çörek|bread|kuru pasta|lavaş/},
+    {k:'cake',   i:'🎂', tr:'Kek & Pasta',          en:'Cakes',                t:/kek|cake|muffin|cupcake|pasta|brownie|pandispanya|pancake|portakal orada/},
+    {k:'sweet',  i:'🍮', tr:'Tatlı & Dondurma',     en:'Desserts & ice cream', t:/tatlı|dondurma|sorbe|muhallebi|sütlaç|profiterol|krep|sorriso/},
+    {k:'savory', i:'🍲', tr:'Yemek & Meze',         en:'Savoury & meze',       t:/./}
+  ];
+  var lower = function(x){ return x.toLocaleLowerCase('tr'); };
+  var ITEMS = RECIPES.map(function(r){
+    var parts = r[1].split('/'), title = lower(parts[0]), cats = lower(r[3]);
+    var g = GROUPS.find(function(G){ return G.k!=='savory' && G.t.test(title); }) ||
+            GROUPS.find(function(G){ return G.k!=='savory' && G.t.test(cats); }) || GROUPS[GROUPS.length-1];
+    return {id:r[0], tr:parts[0].trim(), en:(parts[1]||'').trim(), url:'recipes/'+r[2].replace(/\/$/,'').split('/').pop()+'.html', year:r[2].slice(0,4), g:g, by:r[4]?'Barış Çelik':'Merve Şeneren', q:lower(r[1])};
+  });
+
+  var state = {g:'all', q:'', n:12};
+  var grid = document.getElementById('bkGrid'), chips = document.getElementById('bkChips'),
+      more = document.getElementById('bkMore'), count = document.getElementById('bkCount');
+  function esc(s){ return s.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function drawChips(){
+    var html = '<button class="chip'+(state.g==='all'?' on':'')+'" data-g="all"><span data-tr>Tümü</span><span data-en>All</span><b>'+ITEMS.length+'</b></button>';
+    GROUPS.forEach(function(G){
+      var n = ITEMS.filter(function(x){ return x.g===G; }).length;
+      html += '<button class="chip'+(state.g===G.k?' on':'')+'" data-g="'+G.k+'">'+G.i+' <span data-tr>'+G.tr+'</span><span data-en>'+G.en+'</span><b>'+n+'</b></button>';
+    });
+    chips.innerHTML = html;
+  }
+  function filtered(){
+    return ITEMS.filter(function(x){
+      return (state.g==='all' || x.g.k===state.g) && (!state.q || x.q.indexOf(state.q)>-1);
+    });
+  }
+  function draw(){
+    var list = filtered(), shown = list.slice(0, state.n);
+    grid.innerHTML = shown.map(function(x){
+      return '<a class="rc" href="'+x.url+'"><span class="ic">'+x.g.i+'</span><h4>'+esc(x.tr)+'</h4>'+
+             (x.en?'<span style="color:var(--muted);font-size:14px">'+esc(x.en)+'</span>':'')+
+             '<small>'+x.year+'</small></a>';
+    }).join('') || '<p class="loading">Sonuç yok / No results</p>';
+    more.style.display = list.length > state.n ? '' : 'none';
+    count.textContent = shown.length + ' / ' + list.length;
+  }
+  chips.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if(!b) return;
+    state.g = b.dataset.g; state.n = 12; drawChips(); draw();
+  });
+  document.getElementById('bkSearch').addEventListener('input', function(e){
+    state.q = lower(e.target.value.trim()); state.n = 12; draw();
+  });
+  more.addEventListener('click', function(){ state.n += 12; draw(); });
+
+  drawChips(); draw();
+
+</script>
+</body>
+</html>
